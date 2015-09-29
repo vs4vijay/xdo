@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html ng-app="app">
+    <head>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </head>
+    <body ng-controller="AppCtrl">
+
+      <div ng-include="'app/views/header.html'"></div>
+
+      <div class="container" ng-controller="ToDoCtrl">
+
+        <!-- <div class="alert alert-info" role="alert">
+          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          Hey, This is Demo App. you could find
+          <a href="https://github.com/vs4vijay/vizappjs" class="alert-link"> here </a>
+        </div> -->
+
+        <h1> xDo <small> - A simple ToDo app </small></h1>
+
+        ToDoModel {{ToDoModel}} <br />
+        ToDoList {{ToDoList}}
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="input-group">
+              <input type="text" class="form-control" ng-model="ToDoModel.text" placeholder="Add todo item..." />
+              <span class="input-group-btn">
+                <button class="btn btn-success" type="button" ng-click="addToDo(ToDoModel)" ng-disabled="!ToDoModel.text">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                  Add
+                </button>
+              </span>
+            </div><!-- /input-group -->
+          </div><!-- /.col -->
+          <div class="col-md-6">
+
+            <div class="list-group">
+              <button type="button" class="list-group-item" ng-repeat="todo in ToDoList">
+                {{todo.text}} <span class="badge">14</span>
+              </button>
+              <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
+              <button type="button" class="list-group-item">Morbi leo risus</button>
+              <button type="button" class="list-group-item">Porta ac consectetur ac</button>
+              <button type="button" class="list-group-item">Vestibulum at eros</button>
+            </div>
+
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+
+      </div>
+
+    </body>
+
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/angular-resource.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/controllers/todo-ctrl.js"></script>
+    <script type="text/javascript" src="app/services/todo-service.js"></script>
+</html>
