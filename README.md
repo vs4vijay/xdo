@@ -14,5 +14,5 @@ A simple ToDo application
 
 
   ## Installation
-    - Install `sinatra` using `gem install sinatra`
-    - Run `xdo.rb` using `ruby xdo.rb`
+    - Install gems using `gem install sinatra her`
+    - Run `xdo.rb` using `ruby xdo.rb` or `rackup`

@@ -1,0 +1,2 @@
+require './xdo'
+run XDo

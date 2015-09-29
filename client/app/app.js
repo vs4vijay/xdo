@@ -1,5 +1,7 @@
 /**
-* xDo app
+* xDo app client
+* 
+* Auther: vs4vijay@gmail.com
 */
 
 var app = angular.module('app', ['ngResource']);

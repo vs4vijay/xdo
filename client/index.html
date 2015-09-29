@@ -9,11 +9,11 @@
 
       <div class="container" ng-controller="ToDoCtrl">
 
-        <!-- <div class="alert alert-info" role="alert">
+        <div class="alert alert-info" role="alert">
           <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          Hey, This is Demo App. you could find
-          <a href="https://github.com/vs4vijay/vizappjs" class="alert-link"> here </a>
-        </div> -->
+          Hey, This is Demo ToDo App. you could find source code
+          <a href="https://github.com/vs4vijay/xdo" target="_blank" class="alert-link"> here </a>
+        </div>
 
         <h1> xDo <small> - A simple ToDo app </small></h1>
 
@@ -34,15 +34,22 @@
           </div><!-- /.col -->
           <div class="col-md-6">
 
-            <div class="list-group">
-              <button type="button" class="list-group-item" ng-repeat="todo in ToDoList">
-                {{todo.text}} <span class="badge">14</span>
-              </button>
+            <ul class="list-group">
+              <li href="" class="list-group-item" ng-repeat="todo in ToDoList">
+                <input type="checkbox" name="done" ng-model="todo.done" ng-click="markDone(todo)"/>
+                <span ng-if="!todo.isEdit" ng-dblclick="todo.isEdit=true">
+                  <s ng-if="todo.done">{{todo.text}}</s>
+                  <b ng-if="!todo.done">{{todo.text}}</b>
+                </span>
+                <input type="text" class="form-control2" ng-if="todo.isEdit" ng-model="todo.text"
+                ng-keydown="$event.which === 13 && editToDo(todo)"/>
+                <span class="badge">{{todo.name}}</span>
+              </li>
               <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
               <button type="button" class="list-group-item">Morbi leo risus</button>
               <button type="button" class="list-group-item">Porta ac consectetur ac</button>
               <button type="button" class="list-group-item">Vestibulum at eros</button>
-            </div>
+            </ul>
 
           </div><!-- /.col -->
         </div><!-- /.row -->
