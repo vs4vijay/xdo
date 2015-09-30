@@ -14,5 +14,5 @@ A simple ToDo application
 
 
   ## Installation
-    - Install gems using `gem install sinatra her`
+    - Install gems using `gem install sinatra her mongoid`
     - Run `xdo.rb` using `ruby xdo.rb` or `rackup`
