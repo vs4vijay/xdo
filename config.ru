@@ -1,2 +1,7 @@
-require './xdo'
-run XDo
+require 'rubygems'
+require 'bundler'
+
+Bundler.require
+
+require './viz'
+run Viz
