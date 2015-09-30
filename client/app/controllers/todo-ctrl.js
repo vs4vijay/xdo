@@ -1,8 +1,9 @@
-angular.module('app').controller('ToDoCtrl', ['$scope', 'ToDoService', function($scope, CustomerService) {
+angular.module('app').controller('ToDoCtrl', ['$scope', 'ToDoService', function($scope, ToDoService) {
 
   $scope.ToDoModel = {};
 
-  $scope.ToDoList = [{name: 'vijay', text: 'This is todo1'}];//ToDoService.query();
+  $scope.ToDoList = ToDoService.query();
+  // [{name: 'vijay', text: 'This is todo1'}];
 
   $scope.addToDo = function(toDoModel) {
     //toDoModel.done = false;
