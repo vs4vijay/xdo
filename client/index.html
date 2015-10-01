@@ -36,13 +36,13 @@
 
             <ul class="list-group">
               <li href="" class="list-group-item" ng-repeat="todo in ToDoList">
-                <input type="checkbox" name="done" ng-model="todo.done" ng-click="markDone(todo)"/>
+                <input type="checkbox" name="done" ng-model="todo.done" ng-click="updateToDo(todo)"/>
                 <span ng-if="!todo.isEdit" ng-dblclick="todo.isEdit=true">
                   <s ng-if="todo.done">{{todo.text}}</s>
                   <b ng-if="!todo.done">{{todo.text}}</b>
                 </span>
                 <input type="text" class="form-control2" ng-if="todo.isEdit" ng-model="todo.text"
-                ng-keydown="$event.which === 13 && editToDo(todo)"/>
+                ng-keydown="$event.which === 13 && updateToDo(todo)"/>
                 <span class="badge">{{todo.name}}</span>
               </li>
               <button type="button" class="list-group-item">Dapibus ac facilisis in</button>

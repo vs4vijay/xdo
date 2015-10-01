@@ -7,6 +7,7 @@ A simple ToDo application
     - her - ORM
     - gems used
       - `sinatra`
+      - `mongoid` - An ODM for MongoDB
       - `thin`
   - AngularJS
   - Bootstrap and jQuery
@@ -14,5 +15,5 @@ A simple ToDo application
 
 
   ## Installation
-    - Install gems using `gem install sinatra her mongoid`
+    - Install gems using `gem install sinatra mongoid her`
     - Run `xdo.rb` using `ruby xdo.rb` or `rackup`
