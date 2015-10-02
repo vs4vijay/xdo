@@ -3,5 +3,5 @@ require 'bundler'
 
 Bundler.require
 
-require './viz'
-run Viz
+require './xdo'
+run Xdo
