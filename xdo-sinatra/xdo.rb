@@ -5,6 +5,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/base'
+require 'sinatra/json'
 require 'mongoid'
 require 'her'
 require './models/todo'
@@ -49,12 +50,28 @@ class XDo < Sinatra::Application
 
   get '/api/v1/todos' do
     @todos = Todo.all
-    @todos.to_json
+    # @todos.to_json
+    json @todos
   end
 
   post '/api/v1/todos' do
+
+
+    p 'req'
+    # p request.body.read
+
+    # if params[:text].nil?
+    #   p 'exists'
+    #   p params
+    #   todo = Todo.create!(params[:todo])
+    # else
+    #
+    # end
+
     todo = JSON.parse(request.body.read)
+    todo = todo['todo'] unless todo['todo'].nil?
     todo = Todo.create!(todo)
+
     todo.to_json
   end
 
