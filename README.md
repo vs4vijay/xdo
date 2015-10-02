@@ -1,4 +1,4 @@
-# xdo
+# xDo
 A simple ToDo application in Sinatra, Ruby on Rails, and MongoDB
 
 
