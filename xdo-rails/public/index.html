@@ -17,13 +17,14 @@
 
         <h1> xDo <small> - A simple ToDo app </small></h1>
 
-        ToDoModel {{ToDoModel}} <br />
-        ToDoList {{ToDoList}}
+        <!-- ToDoModel {{ToDoModel}} <br />
+        ToDoList {{ToDoList}} -->
 
         <div class="row">
           <div class="col-md-6">
             <div class="input-group">
-              <input type="text" class="form-control" ng-model="ToDoModel.text" placeholder="Add todo item..." />
+              <input type="text" class="form-control" ng-model="ToDoModel.text" placeholder="Add todo item..."
+                ng-keydown="$event.which === 13 && addToDo(ToDoModel)"/>
               <span class="input-group-btn">
                 <button class="btn btn-success" type="button" ng-click="addToDo(ToDoModel)" ng-disabled="!ToDoModel.text">
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -34,8 +35,10 @@
           </div><!-- /.col -->
           <div class="col-md-6">
 
+            <input type="text" class="form-control" ng-model="ToDoModel.searchText" placeholder="Search ToDo" />
+
             <ul class="list-group">
-              <li href="" class="list-group-item" ng-repeat="todo in ToDoList">
+              <li href="" class="list-group-item" ng-repeat="todo in ToDoList | filter: ToDoModel.searchText">
                 <input type="checkbox" name="done" ng-model="todo.done" ng-click="updateToDo(todo)"/>
                 <span ng-if="!todo.isEdit" ng-dblclick="todo.isEdit=true">
                   <s ng-if="todo.done">{{todo.text}}</s>
@@ -45,10 +48,6 @@
                 ng-keydown="$event.which === 13 && updateToDo(todo)"/>
                 <span class="badge">{{todo.name}}</span>
               </li>
-              <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
-              <button type="button" class="list-group-item">Morbi leo risus</button>
-              <button type="button" class="list-group-item">Porta ac consectetur ac</button>
-              <button type="button" class="list-group-item">Vestibulum at eros</button>
             </ul>
 
           </div><!-- /.col -->

@@ -7,7 +7,7 @@ angular.module('app').controller('ToDoCtrl', ['$scope', 'ToDoService', function(
 
   $scope.addToDo = function(toDoModel) {
     ToDoService.save(toDoModel, function(data) {
-      $scope.ToDoList.push(data);
+      $scope.ToDoList.unshift(data);
       $scope.ToDoModel = {};
     });
   };

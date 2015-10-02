@@ -32,7 +32,7 @@ class XDo < Sinatra::Application
   end
 
   get '/api/v1/todos' do
-    @todos = Todo.all
+    @todos = Todo.all.reverse
     # @todos.to_json
     json @todos
   end
