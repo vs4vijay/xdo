@@ -3,23 +3,23 @@ class TodosController < ApplicationController
   def index
     @todos = Todo.all
     todos = []
-    p @todos
     @todos.each do |todo|
       todos << todo.attributes # {text: todo.text, name: todo.name, id: todo._id['$oid']}
     end
     render json: todos
   end
 
-  def show
-    render json: {}
-  end
-
   def create
     @todo = Todo.create(params)
-    render json: {}
+    render json: @todo.attributes
   end
 
   def update
+    @todo = Todo.save_existing(params[:id], params[:todo])
+    render json: @todo.attributes
+  end
+
+  def show
     render json: {}
   end
 
