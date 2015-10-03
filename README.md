@@ -1,5 +1,6 @@
 # xDo
-A simple ToDo application in Sinatra, Ruby on Rails, and MongoDB
+A simple ToDo application in Sinatra, Ruby on Rails, and MongoDB.
+Deployed at http://xdo.mybluemix.net/
 
 
 ## Technology used
