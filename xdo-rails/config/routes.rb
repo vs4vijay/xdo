@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
 
-  resources :todos
+  resources :todos do
+      get :search, on: :collection
+  end
+
   # get 'todos/:id' => 'todos#get'
 
   # The priority is based upon order of creation: first created -> highest priority.

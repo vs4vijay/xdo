@@ -9,6 +9,15 @@ class TodosController < ApplicationController
     render json: todos
   end
 
+  def search
+    @todos = Todo.search term: params[:term]
+    todos = []
+    @todos.each do |todo|
+      todos << todo.attributes # {text: todo.text, name: todo.name, id: todo._id['$oid']}
+    end
+    render json: todos
+  end
+
   def create
     @todo = Todo.create(params)
     render json: @todo.attributes
