@@ -3,6 +3,11 @@ A simple ToDo application in Sinatra, Ruby on Rails, and MongoDB.
 Deployed at http://xdo.mybluemix.net/
 
 
+## Development
+  - use `/spa` path for Single Page Application in AngularJS
+  - use `/` path for Rails Application
+
+
 ## Technology used
   - Ruby
     - Sinatra - API Server

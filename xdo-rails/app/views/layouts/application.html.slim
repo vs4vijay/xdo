@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title Xdo - A todo app
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  body
+  
+    = render partial: 'partials/header'
+  
+    .container
+    
+      div (class="alert alert-info" role="alert")
+        button (type="button" class="close" data-dismiss="alert")
+          span (aria-hidden="true") &times;
+          span (class="sr-only") Close
+        | Hey, This is Demo ToDo App. you could find source code
+        a (href="https://github.com/vs4vijay/xdo" target="_blank" class="alert-link") 
+          |  here
+
+    = yield
+    
+    = render partial: 'partials/footer'

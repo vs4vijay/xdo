@@ -39,10 +39,7 @@ class Xdo < Sinatra::Application
 
   get '/api/v1/todos/search' do
     search_term = params[:term]
-    p '-----search term----'
-    p search_term
     @todos = Todo.where(text: /#{search_term}/i).reverse
-    # @todos.to_json
     json @todos
   end
 
