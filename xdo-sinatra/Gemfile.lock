@@ -1,58 +1,77 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (4.2.5)
-      activesupport (= 4.2.5)
-      builder (~> 3.1)
-    activesupport (4.2.5)
-      i18n (~> 0.7)
-      json (~> 1.7, >= 1.7.7)
-      minitest (~> 5.1)
-      thread_safe (~> 0.3, >= 0.3.4)
-      tzinfo (~> 1.1)
-    backports (3.6.7)
-    bson (3.2.6)
-    builder (3.2.2)
-    i18n (0.7.0)
-    json (1.8.3)
-    minitest (5.8.3)
-    mongo (2.1.2)
-      bson (~> 3.0)
-    mongoid (5.0.1)
-      activemodel (~> 4.0)
-      mongo (~> 2.1)
-      origin (~> 2.1)
-      tzinfo (>= 0.3.37)
-    multi_json (1.11.2)
-    origin (2.1.1)
-    rack (1.6.4)
-    rack-protection (1.5.3)
-      rack
-    rack-test (0.6.3)
-      rack (>= 1.0)
-    sinatra (1.4.6)
-      rack (~> 1.4)
-      rack-protection (~> 1.4)
-      tilt (>= 1.3, < 3)
-    sinatra-contrib (1.4.6)
-      backports (>= 2.0)
-      multi_json
-      rack-protection
-      rack-test
-      sinatra (~> 1.4.0)
-      tilt (>= 1.3, < 3)
-    thread_safe (0.3.5)
-    tilt (2.0.1)
-    tzinfo (1.2.2)
-      thread_safe (~> 0.1)
+    activemodel (7.1.5.1)
+      activesupport (= 7.1.5.1)
+    activesupport (7.1.5.1)
+      base64
+      benchmark (>= 0.3)
+      bigdecimal
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      connection_pool (>= 2.2.5)
+      drb
+      i18n (>= 1.6, < 2)
+      logger (>= 1.4.2)
+      minitest (>= 5.1)
+      mutex_m
+      securerandom (>= 0.3)
+      tzinfo (~> 2.0)
+    base64 (0.3.0)
+    benchmark (0.4.1)
+    bigdecimal (3.2.2)
+    bson (5.1.1)
+    concurrent-ruby (1.3.5)
+    connection_pool (2.5.3)
+    drb (2.2.3)
+    i18n (1.14.7)
+      concurrent-ruby (~> 1.0)
+    logger (1.7.0)
+    minitest (5.25.5)
+    mongo (2.21.1)
+      base64
+      bson (>= 4.14.1, < 6.0.0)
+    mongoid (9.0.6)
+      activemodel (>= 5.1, < 8.1, != 7.0.0)
+      concurrent-ruby (>= 1.0.5, < 2.0)
+      mongo (>= 2.18.0, < 3.0.0)
+    multi_json (1.15.0)
+    mustermann (3.0.3)
+      ruby2_keywords (~> 0.0.1)
+    mutex_m (0.3.0)
+    rack (3.1.16)
+    rack-protection (4.1.1)
+      base64 (>= 0.1.0)
+      logger (>= 1.6.0)
+      rack (>= 3.0.0, < 4)
+    rack-session (2.1.1)
+      base64 (>= 0.1.0)
+      rack (>= 3.0.0)
+    ruby2_keywords (0.0.5)
+    securerandom (0.3.2)
+    sinatra (4.1.1)
+      logger (>= 1.6.0)
+      mustermann (~> 3.0)
+      rack (>= 3.0.0, < 4)
+      rack-protection (= 4.1.1)
+      rack-session (>= 2.0.0, < 3)
+      tilt (~> 2.0)
+    sinatra-contrib (4.1.1)
+      multi_json (>= 0.0.2)
+      mustermann (~> 3.0)
+      rack-protection (= 4.1.1)
+      sinatra (= 4.1.1)
+      tilt (~> 2.0)
+    tilt (2.6.0)
+    tzinfo (2.0.6)
+      concurrent-ruby (~> 1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  mongoid
-  sinatra
-  sinatra-contrib
+  mongoid (>= 7.0.12)
+  sinatra (>= 2.0.0)
+  sinatra-contrib (>= 2.0.0)
 
 BUNDLED WITH
-   1.10.6
+   1.17.3
